@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Encryption and Decryption</title>
+    <style>
+         body {
+            background-image: url('https://static3.bigstockphoto.com/8/9/3/large1500/398074268.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+       body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #08f3ef;
+        }
+
+        label {
+            color: #08f3ef;
+            display: block;
+            margin-top: 30px;
+        }
+
+        textarea,
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 2px solid #ccc;
+            width: 300px;
+            transition: border-color 0.3s;
+        }
+
+        textarea:focus,
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        button:hover {
+            background-color: #3498db;
+            color: white;
+        }
+
+        #outputText {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Text Encryption and Decryption</h1>
+
+    <label for="inputText">Enter Text:</label>
+    <textarea id="inputText" rows="4" cols="50" placeholder="Enter your text"></textarea>
+
+    <br>
+
+    <label for="encryptionKey">Encryption Key:</label>
+    <input type="text" id="encryptionKey" placeholder="Enter encryption key">
+
+    <br>
+
+    <button onclick="encryptText()">Encrypt</button>
+    <button onclick="decryptText()">Decrypt</button>
+
+    <br>
+
+    <label for="outputText">Result:</label>
+    <textarea id="outputText" rows="4" cols="50" readonly></textarea>
+
+    <script>
+function encryptText() {
+            var inputText = document.getElementById('inputText').value;
+            var encryptionKey = document.getElementById('encryptionKey').value;
+
+            // Simple Caesar Cipher for demonstration
+            var encryptedText = '';
+            for (var i = 0; i < inputText.length; i++) {
+                var charCode = inputText.charCodeAt(i);
+                encryptedText += String.fromCharCode(charCode + parseInt(encryptionKey));
+            }
+
+            document.getElementById('outputText').value = encryptedText;
+        }
+
+        function decryptText() {
+            var inputText = document.getElementById('inputText').value;
+            var encryptionKey = document.getElementById('encryptionKey').value;
+
+            // Simple Caesar Cipher decryption for demonstration
+            var decryptedText = '';
+            for (var i = 0; i < inputText.length; i++) {
+                var charCode = inputText.charCodeAt(i);
+                decryptedText += String.fromCharCode(charCode - parseInt(encryptionKey));
+            }
+
+            document.getElementById('outputText').value = decryptedText;
+        }
+    </script>
+
+</body>
+</html>
+<GREY HAT HACKERS></GREY>
